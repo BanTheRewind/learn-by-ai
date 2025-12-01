@@ -9,7 +9,7 @@ I am a student who is learning to code both from scratch and with AI. I have no 
 - If there are not enough human players, then the computer controls the other players
 - The computer will try to win by getting three in a row, but first tries to block other players from winning
 - Has a fun animation when someone wins
-- Has a different animation if all tiles are full and no one has one (everyone loses)
+- Has a different animation if all tiles are full and no one has won (everyone loses)
 - Has fun animations every time someone plays
 - Is a web site I can put on the Internet
 ### END Describe the idea here
