@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Player Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="menu">
+        <h1>Four Player Tic-Tac-Toe</h1>
+        <p>How many human players?</p>
+        <button onclick="startGame(1)">1 Player</button>
+        <button onclick="startGame(2)">2 Players</button>
+        <button onclick="startGame(3)">3 Players</button>
+        <button onclick="startGame(4)">4 Players</button>
+        <div class="instructions">
+            <p>🎯 Get 3 in a row to win!</p>
+            <p>🤖 Computer players will play automatically</p>
+        </div>
+    </div>
+    
+    <div id="game" style="display: none;">
+        <h2>Player 1's Turn</h2>
+        <div id="board"></div>
+    </div>
+
+    <div id="overlay" style="display: none;">
+        <div id="overlay-content">
+            <h1 id="overlay-message"></h1>
+            <div id="celebration-container"></div>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="ai.js"></script>
+    <script src="sounds.js"></script>
+</body>
+</html>

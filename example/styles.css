@@ -1,0 +1,333 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #0f0;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+#menu {
+    margin-top: 100px;
+}
+
+#menu h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #0f0;
+}
+
+#menu p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #0a0;
+    color: #000;
+    border: 3px solid #0f0;
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #0f0;
+}
+
+button:hover {
+    background-color: #0f0;
+    box-shadow: 0 0 20px #0f0;
+}
+
+#game {
+    margin-top: 50px;
+}
+
+#game h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #0f0;
+    padding: 15px;
+    border: 2px solid #0f0;
+    display: inline-block;
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(5, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.tile {
+    background-color: #001a00;
+    border: 2px solid #0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tile:hover {
+    background-color: #003300;
+    box-shadow: 0 0 15px #0f0;
+}
+
+.tile.filled {
+    cursor: not-allowed;
+}
+
+.tile.filled:hover {
+    background-color: #001a00;
+}
+
+/* Player-specific colors */
+.player-0 {
+    color: #0ff;
+    text-shadow: 0 0 20px #0ff;
+}
+
+.player-1 {
+    color: #f0f;
+    text-shadow: 0 0 20px #f0f;
+}
+
+.player-2 {
+    color: #f00;
+    text-shadow: 0 0 20px #f00;
+}
+
+.player-3 {
+    color: #ff0;
+    text-shadow: 0 0 20px #ff0;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px #0f0;
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 30px currentColor;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px currentColor;
+    }
+}
+
+.tile.pulse {
+    animation: pulse 0.4s ease-out;
+}
+
+/* Retro scanline effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Screen flicker */
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.95; }
+}
+
+body {
+    animation: flicker 0.15s infinite;
+}
+
+/* Game over overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+#overlay-content {
+    text-align: center;
+}
+
+#overlay-message {
+    font-size: 56px;
+    margin-bottom: 40px;
+    animation: colorCycle 2s infinite, bounce 1s ease-in-out infinite;
+}
+
+/* Win celebration animations */
+@keyframes colorCycle {
+    0% { color: #0ff; text-shadow: 0 0 30px #0ff; }
+    25% { color: #f0f; text-shadow: 0 0 30px #f0f; }
+    50% { color: #ff0; text-shadow: 0 0 30px #ff0; }
+    75% { color: #f0f; text-shadow: 0 0 30px #f0f; }
+    100% { color: #0ff; text-shadow: 0 0 30px #0ff; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+}
+
+#celebration-container {
+    position: relative;
+    height: 200px;
+    margin-bottom: 40px;
+}
+
+.star {
+    position: absolute;
+    font-size: 48px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.5); }
+    to { transform: rotate(360deg) scale(1); }
+}
+
+.star:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+.star:nth-child(2) { left: 30%; top: 60%; animation-delay: 0.3s; }
+.star:nth-child(3) { left: 50%; top: 10%; animation-delay: 0.6s; }
+.star:nth-child(4) { left: 70%; top: 50%; animation-delay: 0.9s; }
+.star:nth-child(5) { left: 90%; top: 30%; animation-delay: 1.2s; }
+
+/* Tie animation */
+.falling {
+    position: absolute;
+    font-size: 36px;
+    animation: fall 3s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    from {
+        top: -50px;
+        opacity: 1;
+    }
+    to {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.falling:nth-child(1) { left: 15%; animation-delay: 0s; }
+.falling:nth-child(2) { left: 30%; animation-delay: 0.5s; }
+.falling:nth-child(3) { left: 45%; animation-delay: 1s; }
+.falling:nth-child(4) { left: 60%; animation-delay: 1.5s; }
+.falling:nth-child(5) { left: 75%; animation-delay: 2s; }
+.falling:nth-child(6) { left: 90%; animation-delay: 2.5s; }
+
+/* Winning tile highlight */
+.winning-tile {
+    background-color: #0f0 !important;
+    animation: winPulse 0.5s ease-in-out infinite;
+}
+
+@keyframes winPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.instructions {
+    margin-top: 40px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.instructions p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #menu h1 {
+        font-size: 32px;
+    }
+    
+    #menu p {
+        font-size: 18px;
+    }
+    
+    button {
+        font-size: 16px;
+        padding: 12px 24px;
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
+    
+    #board {
+        grid-template-columns: repeat(5, 60px);
+        grid-template-rows: repeat(5, 60px);
+        gap: 3px;
+    }
+    
+    .tile {
+        font-size: 32px;
+    }
+    
+    #game h2 {
+        font-size: 24px;
+    }
+    
+    #overlay-message {
+        font-size: 36px;
+    }
+    
+    #celebration-container {
+        height: 150px;
+    }
+    
+    .star, .falling {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    #menu h1 {
+        font-size: 24px;
+    }
+    
+    #board {
+        grid-template-columns: repeat(5, 50px);
+        grid-template-rows: repeat(5, 50px);
+    }
+    
+    .tile {
+        font-size: 24px;
+    }
+    
+    #overlay-message {
+        font-size: 28px;
+    }
+}
