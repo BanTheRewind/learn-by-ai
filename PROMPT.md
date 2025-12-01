@@ -20,7 +20,7 @@ Create your project in a subdirectory named "example". Create another folder cal
 
 Use industry standard technology to create the project, so that when I learn to make this, I will have valuable knowledge I can use to get a job.
 
-### The agent will ask clarifying questions
+# (The agent will ask clarifying questions here)
 
 # PROMPT FOR THE COMPLETION OF EACH STEP
 
