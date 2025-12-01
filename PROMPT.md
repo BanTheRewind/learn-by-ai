@@ -2,7 +2,7 @@
 
 I am a student who is learning to code both from scratch and with AI. I have no coding experience at all. I want to build the following, and learn how it works:
 
-### BEGIN Describe the idea here
+### BEGIN Describe the idea here (remove this line from your prompt)
 - Is a game like tic-tac-toe, but for four players
 - Has a 5x5 tile grid instead of 3x3
 - Uses the same rules as tic-tac-toe to win--a player has to get three in a row diagonally, vertically, or horizontally, can only put their piece in an available tile, and takes turns
@@ -12,7 +12,7 @@ I am a student who is learning to code both from scratch and with AI. I have no 
 - Has a different animation if all tiles are full and no one has won (everyone loses)
 - Has fun animations every time someone plays
 - Is a web site I can put on the Internet
-### END Describe the idea here
+### END Describe the idea here (remove this line from your prompt)
 
 Before making anything, create a detailed plan. Think hard about this. If there are any details I missed in my request which you need to know, please ask me before you make your plan. Evaluate your plan and make sure it will work correctly right away. Once you are satisfied with your plan, break the plan down into the tiny steps you will execute. For each step, create a document named "STEP #: TITLE", where # is the step number and TITLE is a one-to-three word description of what the step is doing. Each step should stop at a place where the web site runs successfully, even if it is incomplete. In each of these documents, explain exactly what you will do in each step, and why. Provide instructions for me to execute the same step myself. Once the project is complete and running, go back through these documents and update them to reflect any changes you may have made.
 
