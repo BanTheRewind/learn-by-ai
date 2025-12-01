@@ -24,4 +24,4 @@ Use industry standard technology to create the project, so that when I learn to 
 
 # PROMPT FOR THE COMPLETION OF EACH STEP
 
-I have completed step # in the "student" folder. Using the "Step #" document, compare the work I did with what is in example, and rate how I did. If I made any mistakes, please help me understand how to fix them. Is what I did working and good enough to continue to the next step, or should I go back and fix anything?
+I have completed step # in the "student" folder. Using the "Step #" document, compare the work I did with what is in example, and rate how I did. If I made any mistakes, please help me understand how to fix them. Is what I did working and good enough to continue to the next step, or should I go back and fix anything? Let me know what I did well, and things I might want to try at this step before moving on.
